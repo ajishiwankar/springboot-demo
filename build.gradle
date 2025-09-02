@@ -24,7 +24,7 @@ tasks.named("jar") {
 }
 
 bootJar {
-    archiveFileName.set("springboot-demo.jar")
+    archiveFileName.set("springboot-demo")
 }
 
 dependencies {
