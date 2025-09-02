@@ -18,6 +18,11 @@ repositories {
 	mavenCentral()
 }
 
+// Disable plain JAR creation
+tasks.named("jar") {
+    enabled = false
+}
+
 bootJar {
     archiveFileName.set("springboot-demo.jar")
 }
