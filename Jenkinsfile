@@ -1,14 +1,9 @@
 pipeline {
     agent any
 
-    tools {
-//         jdk 'JDK-21'          // must match name in Jenkins → Tools
-        gradle 'Gradle-8.5'   // must match name in Jenkins → Tools
-    }
-
-    triggers {
-        githubPush()
-    }
+//     tools {
+//         jdk 'JDK-21'
+//     }
 
     options {
         disableConcurrentBuilds()
@@ -24,9 +19,8 @@ pipeline {
 
         stage('Build & Test') {
             steps {
-//                 sh 'java -version'
-                sh 'gradle --version'
-                sh 'gradle clean build'
+                sh 'chmod +x gradlew'
+                sh './gradlew clean build'
             }
         }
     }
