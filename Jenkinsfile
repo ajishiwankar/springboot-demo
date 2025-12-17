@@ -1,9 +1,9 @@
 pipeline {
     agent any
 
-//     tools {
-//         jdk 'JDK-21'
-//     }
+    tools {
+        gradle 'Gradle-8.4'
+    }
 
     options {
         disableConcurrentBuilds()
@@ -19,8 +19,9 @@ pipeline {
 
         stage('Build & Test') {
             steps {
-                sh 'chmod +x gradlew'
-                sh './gradlew clean build'
+                    sh 'java -version'
+                    sh 'gradle --version'
+                    sh 'gradle clean build'
             }
         }
     }
